@@ -1,0 +1,17 @@
+form {
+    width: 250px;
+}
+form input, label {
+    display: block;
+}
+
+form input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 3px;
+    border-radius: 3px;
+}
+form label{
+    padding: 5px 0;
+    font-size: 19px;
+}

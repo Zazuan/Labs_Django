@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Архив всех статей</title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+    </head>
+    <body class="archive">
+        <nav class="menu">
+        <ul>
+            <li><a class="#" href="http://127.0.0.1:8000/article/new">Создать новый пост</a></li>
+            <li><a class="user" href="http://127.0.0.1:8000/login/">Войти</a></li>
+            <li><a class="user" href="http://127.0.0.1:8000/register/">Зарегистрироваться</a></li>
+            <li><a class="user" href="http://127.0.0.1:8000/exit/">Выход</a></li>
+        </ul>
+        </nav>
+        <div class="header">
+            <img src="https://i.mycdn.me/i?r=AzGBqNaF5OQp2lMpnhRx4DEF5gwl_8b2I5ITwI1foRHC00NXGtQH27e50ImexYVDPiQ"
+                 alt="Тут должна быть картинка">
+        </div>
+        <div>
+            {% for post in posts %}
+            <div class="one-post">
+                <h2  class="post-title">
+                    <a class = "title"href="http://127.0.0.1:8000/article/{{post.id}}"> {{ post.title }}</a>
+                    <a class="fold-button" href="">Свернуть</a>
+                </h2>
+                 <div class="article-info">
+                     <div class="article-author">{{ post.author.username }}</div>
+                     <div class="article-created-date">{{ post.created_date }}</div>
+                 </div>
+            <p class="article-text">{{ post.get_excerpt }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    <script src="{{ STATIC_URL }}/static/js/fold-post.js"></script>
+    </body>
+</html>

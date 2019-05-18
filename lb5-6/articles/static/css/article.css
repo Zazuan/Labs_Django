@@ -1,0 +1,95 @@
+body {
+    background: #527756;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+}
+
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+.menu li {
+    display: inline;
+}
+.menu a {
+    text-decoration: none;
+    padding: 1em;
+    background: #3e5f42;
+    color: #ffffff;
+}
+.menu ul {
+    padding: 1em 0;
+    background: #527756;
+
+}
+.menu a:hover {background: #273b29;}
+
+.user a{
+    text-align: right;
+}
+
+.header img {
+    display: block;
+    width: 170px;
+    padding: 1em;
+}
+
+.back {
+    text-decoration: none;
+    float: right;
+    margin-top: 1em;
+    padding: 1em;
+    background: #3e5f42;
+    color: #ffffff;
+}
+.back:hover {background: #273b29;}
+
+.archive {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.archive img{
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.article {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.one-post a:hover{
+    text-decoration: underline;}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.article-author {
+    width: 80%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+    font-family: serif;
+    font-style: italic;
+}
+
+.fold-button{
+    float: right;
+    font-size: 14px;
+}
+
+
+
+.one-post.folded .article-author{
+    display: none;
+}
+.one-post.folded .article-created-date{
+    display: none;
+}

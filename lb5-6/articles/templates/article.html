@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Статья </title>
+        <link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
+    </head>
+    <body class="article">
+        <div class="header">
+            <a class="back" href="http://127.0.0.1:8000/archive/">Все статьи</a>
+            <img src="https://i.mycdn.me/i?r=AzGBqNaF5OQp2lMpnhRx4DEF5gwl_8b2I5ITwI1foRHC00NXGtQH27e50ImexYVDPiQ" alt="Тут должна быть картинка">
+        </div>
+        <div>
+            <div class="one-post">
+                <h2 class="post-title">{{ post.title }}</h2>
+                 <div class="article-info">
+                     <div class="article-author">{{ post.author.username }}</div>
+                     <div class="article-created-date">{{ post.created_date }}</div>
+                 </div>
+            <p class="article-text">{{ post.fulltext }}</p>
+            </div>
+        </div>
+    </body>
+</html>
