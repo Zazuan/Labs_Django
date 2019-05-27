@@ -7,10 +7,14 @@
     <body class="archive">
         <nav class="menu">
         <ul>
-            <li><a class="#" href="http://127.0.0.1:8000/article/new">Создать новый пост</a></li>
-            <li><a class="user" href="http://127.0.0.1:8000/login/">Войти</a></li>
-            <li><a class="user" href="http://127.0.0.1:8000/register/">Зарегистрироваться</a></li>
-            <li><a class="user" href="http://127.0.0.1:8000/exit/">Выход</a></li>
+            {% if user.is_authenticated %}
+                <li><a class="#" href="http://127.0.0.1:8000/article/new">Создать новый пост</a></li>
+                <li><a class="user" href="http://127.0.0.1:8000/exit/">Выход</a></li>
+            {% else %}
+                <li><a class="user" href="http://127.0.0.1:8000/login/">Войти</a></li>
+                <li><a class="user" href="http://127.0.0.1:8000/register/">Зарегистрироваться</a></li>
+            {% endif %}
+
         </ul>
         </nav>
         <div class="header">
@@ -20,9 +24,10 @@
         <div>
             {% for post in posts %}
             <div class="one-post">
+                <a class="fold-button" style="cursor: pointer">Свернуть</a>
                 <h2  class="post-title">
-                    <a class = "title"href="http://127.0.0.1:8000/article/{{post.id}}"> {{ post.title }}</a>
-                    <a class="fold-button" href="">Свернуть</a>
+                    <a class = "title" href="http://127.0.0.1:8000/article/{{post.id}}"> {{ post.title }}</a>
+
                 </h2>
                  <div class="article-info">
                      <div class="article-author">{{ post.author.username }}</div>

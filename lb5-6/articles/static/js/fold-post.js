@@ -4,28 +4,28 @@ for (var i = 0; i<foldBtns.length; i++){
     foldBtns[i].addEventListener("click", function(e) {
 
         if (e.target.className == "fold-button folded"){
-            e.target.innerHTML = "свернуть";
+            e.target.innerHTML = "Свернуть";
             e.target.className = "fold-button";
             var displayState = "block";
         }
 
         else{
-        e.target.innerHTML = "развернуть";
+        e.target.innerHTML = "Развернуть";
         e.target.className = "fold-button folded";
         var displayState = "none";
         }
 
-    event.target
+        event.target
         .parentElement
         .getElementsByClassName('article-author')[0]
         .style.display = displayState;
-    event.target
 
+        event.target
         .parentElement
         .getElementsByClassName('article-created-date')[0]
         .style.display = displayState;
-    event.target
 
+        event.target
         .parentElement
         .getElementsByClassName('article-text')[0]
         .style.display = displayState;

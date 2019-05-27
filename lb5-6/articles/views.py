@@ -34,10 +34,14 @@ def create_post(request):
             }
             # в словаре form будет храниться информация, введенная пользователем
             if form["text"] and form["title"]:
-                # если поля без ошибок
-                Article.objects.create(text=form["text"], title=form["title"], author=request.user)
-                article = Article.objects.get(title=form['title'])
-                return redirect('get_article', article.id)
+                title = form['title']
+                if Article.objects.filter(title=title).exists():
+                    form['errors'] = u'Запись с таким заголовком уже существует!'
+                    return render(request, 'create_post.html', {'form': form})
+                else:
+                    Article.objects.create(text=form["text"], title=form["title"], author=request.user)
+                    article = Article.objects.get(title=form['title'])
+                    return redirect('get_article', article.id)
             # перейти на страницу поста
             else:
                 # если введенные данные некорректны
@@ -47,7 +51,7 @@ def create_post(request):
             # просто вернуть страницу с формой, если метод GET
             return render(request, 'create_post.html', {})
     else:
-        return HttpResponse(u'Вам нужно войти в свой аккаунт!')
+        raise Http404
 
 
 class RegisterFormView(FormView):

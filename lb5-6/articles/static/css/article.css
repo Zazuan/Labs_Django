@@ -1,7 +1,8 @@
 body {
-    background: #527756;
+    background: #c7c645;
     font-family: Tahoma, Arial, sans-serif;
     color: #ffffff;
+    font-size: larger;
 }
 
 
@@ -16,15 +17,15 @@ ul {
 .menu a {
     text-decoration: none;
     padding: 1em;
-    background: #3e5f42;
+    background: #8c8b34;
     color: #ffffff;
 }
 .menu ul {
     padding: 1em 0;
-    background: #527756;
+    background: #c7c645;
 
 }
-.menu a:hover {background: #273b29;}
+.menu a:hover {background: #57561e;}
 
 .user a{
     text-align: right;
@@ -41,10 +42,10 @@ ul {
     float: right;
     margin-top: 1em;
     padding: 1em;
-    background: #3e5f42;
+    background: #8c8b34;
     color: #ffffff;
 }
-.back:hover {background: #273b29;}
+.back:hover {background: #8c8b34;}
 
 .archive {
     width: 960px;
@@ -61,7 +62,7 @@ ul {
     margin-left: auto;
     margin-right: auto;
 }
-.one-post a:hover{
+.title:hover{
     text-decoration: underline;}
 
 a {
@@ -81,9 +82,13 @@ a {
 }
 
 .fold-button{
+    padding: 1em;
+    background: #c7c645;
+    color: #ffffff;
     float: right;
     font-size: 14px;
 }
+.fold-button:hover{background: #8c8b34;}
 
 
 
